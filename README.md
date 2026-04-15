@@ -31,7 +31,7 @@ $E\psi=-\frac{\hslash^{2}}{2m}\frac{d^{2} }{d x^{2}}\psi$
 
 $E\phi=i\hslash\frac{d}{dt}\phi$
 
-**Let's solve first for our space funcion $\psi$**
+**Let's solve first for our space function $\psi$**
 
 Arranging, normalizing and making a change of variable
 
@@ -96,7 +96,7 @@ So we have an infinite amount of solutions for this, that depends on every k val
 
 **Wavepacket**
 
-We have all solutions for our wave function, the thing is, all of the solutions describe the state of the particle, not just one, so we have to write the complete general solucion for the wave function.
+We have all solutions for our wave function, the thing is, all of the solutions describe the state of the particle, not just one, so we have to write the complete general solution for the wave function.
 since all our solutions 'eigenstates'depend of k, we can write the general solution as a combination of all posible k values,
 giving this, also A, would depend of k, since it would be the corresponding coeficient for a k solution.
 
