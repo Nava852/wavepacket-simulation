@@ -48,7 +48,7 @@ Solving for $\psi$ is easy, we end up with
 
 $\psi(x)=Ae^{ikx}+Be^{-ikx}$
 
-$for k>0$
+for $k>0$
 
 We can just take,
 $\psi(x)=Ae^{ikx}$
