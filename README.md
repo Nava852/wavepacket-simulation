@@ -135,3 +135,6 @@ Putting in into $A(k)$, we end up with
 
 $A(k) =\frac{1}{\sqrt{2\pi}}\int_{\Re}^{}Be^{-\frac{x^{2}}{4\sigma^{2}}}e^{ik_{0}x}e^{-ikx}dx$
 
+
+https://jobgether.com/offer/69dda6e2c646310ee38d9908-ai-data-quality-analyst
+
