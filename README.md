@@ -106,7 +106,7 @@ $\psi(x,t)=\frac{1}{\sqrt{2\pi}}\int_{\Re }^{}A(k)e^{i(kx-w(k)t)}dk$
 
 Notice that we would have to give and infinite amount of numbers for A(k), we look for a more realistic way to determine our solution, and this is making use of the Fourier Transform
 
-Basically, we are asking our state %\psi(x,0)% how much of each wave determined by its frecuency has.
+Basically, we are asking our state $\psi(x,0)$ how much of each wave determined by its frecuency has.
 
 $A(k) =\frac{1}{\sqrt{2\pi}}\int_{\Re}^{}\psi(x,0)e^{-ikx}dx$
 
@@ -116,5 +116,22 @@ Look that we just use t=0 as our initial condition for the solution, since it wo
 So, we need a starting poing to the solution, it is often choosed as a normal distribution either of the value k or the position.
 
 
+Here, is when the problems comes 'hard' to handle, since we have that our solution to this, are complex integrals under Fourier Transforms,
 
+**Which solution fits best to this case?**
+
+We generally have two options, the first one being taking a finite number of possible Ks, and then using FFT, so we would basically discretize our solution. And then we have an analytical way to solve it, which is often harder to get and calculate, but more precise. This also implies that, computationally, it is more expensive. In this case, we can adventure ourselves building it the analytical way, as we do not have a potential for the particle, and taking advantage of the fact that Gaussian forms under Fourier Transformations give us another Gaussian distribution.
+
+So, out initial condition would be
+
+$\psi(x,0)=Be^{-\frac{x^{2}}{4\sigma^{2}}}e^{ik_{0}x}$
+
+where
+
+$B =(2\pi\sigma^{2})^{-1/4}$
+
+
+Putting in into $A(k)$, we end up with
+
+$A(k) =\frac{1}{\sqrt{2\pi}}\int_{\Re}^{}Be^{-\frac{x^{2}}{4\sigma^{2}}}e^{ik_{0}x}e^{-ikx}dx$
 
