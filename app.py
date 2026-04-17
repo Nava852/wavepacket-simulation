@@ -66,13 +66,17 @@ for t in T:
           x=x,
           y=y,
           z=z,
+          customdata=psi,
           mode='markers',
           marker=dict(
               size=2,
               color=psi,
               colorscale='Turbo',
               opacity=0.8
-          )
+          ),
+          hovertemplate=(
+                "ψ²: %{customdata}<extra></extra>"
+            )
       )],
       name=str(t)
   ))
