@@ -75,7 +75,10 @@ for t in T:
               opacity=0.8
           ),
           hovertemplate=(
-                "ψ²: %{customdata}<extra></extra>"
+                "x: %{x}<br>"
+                "y: %{y}<br>"
+                "z: %{z}<br>"
+                "ψ: %{customdata}<extra></extra>"
             )
       )],
       name=str(t)
