@@ -36,13 +36,12 @@ x, y, z = generate_points(N, L)
 Tn = config.Tn
 s = config.s
 
-T = list(range(0,Tn))
+#T = list(range(0,Tn))
 #T = [t*s for t in T]                  #<-------- This for general plotly use
 
-T = st.slider("t", 0, Tn, 0)*s        #<-------- This for streamlit use
-st.title("Quantum Probability Cloud")
-
-
+T = [t*s for t in range(0, Tn)]  #<-------- This for streamlit use
+t = st.slider("t", 0, Tn, 0) * s
+st.title("Quantum Probability Cloud")  
 
 #We pass the (x,y,z) points given Ti, to the wave function
 def psi_squared(x, y, z, t):
