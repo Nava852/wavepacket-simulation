@@ -135,6 +135,98 @@ Putting in into $A(k)$, we end up with
 
 $A(k) =\frac{1}{\sqrt{2\pi}}\int_{\Re}^{}Be^{-\frac{x^{2}}{4\sigma^{2}}}e^{ik_{0}x}e^{-ikx}dx$
 
+$A(k) =\frac{B}{\sqrt{2\pi}}\int_{\Re}^{}e^{-\frac{x^{2}}{4\sigma^{2}}+i(k_{0}-k)x}dx$
+
+This type of integrals can be solved with
+
+$\int_{\Re}^{}e^{-(ax^{2}+bx)}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^{2}}{4a}}$
+
+So,
+
+
+$A(k) =\frac{B}{\sqrt{2\pi}}(2\sigma\sqrt{\pi})e^{-\sigma^{2}(k-k_{0})^{2}}$
+
+
+Now, replacing in our wave equation
+
+$\psi(x,t)=\frac{1}{\sqrt{2\pi}}\int_{\Re }^{}\frac{B}{\sqrt{2\pi}}(2\sigma\sqrt{\pi})e^{-\sigma^{2}(k-k_{0})^{2}}e^{i(kx-w(k)t)}dk$
+
+$\psi(x,t)=\frac{B\sigma}{\sqrt{\pi}}\int_{\Re }^{}e^{-\sigma^{2}(k-k_{0})^{2}+i(kx-w(k)t)}dk$
+
+Now we have to transform our integral to solve it as we did above.
+
+$\int_{\Re}^{}e^{-(ax^{2}+bx+c)}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^{2}}{4a}-c}$
+
+Ending with
+
+$\psi(x,t)=\frac{B\sigma}{\sqrt{\pi}}\int_{\Re }^{}e^{-k^{2}(\sigma^{2}+\frac{i\hslash t}{2m})+k(2\sigma^{2}k_{0}+ix)-\sigma^{2}k_{0}^{2}}dk$
+
+Now, solving and symplifing the most to end up with one exponential, we have.
+
+$\psi(x,t)=\frac{B\sigma}{\sqrt{\sigma^{2}+\frac{i\hslash t}{2m}}}exp[\frac{(2\sigma^{2}k_{0}-ix)^{2}}{4(\sigma^{2}+\frac{i\hslash t}{2m})}-\sigma^{2}k_{0}^{2}]$
+
+Let's make some use of three total variable sustitutions in order to make it look cleaner
+
+$\psi(x,t)=\frac{B\sigma}{\sqrt{\alpha}}exp[\frac{\beta^{2}}{4\alpha}-\sigma^{2}k_{0}^{2}]$
+
+where
+
+$\alpha=\sigma^{2}+\frac{i\hslash t}{2m}$
+
+$\beta=2\sigma^{2}k_{0}-ix$
+
+$B =(2\pi\sigma^{2})^{-1/4}$
+
+
+**The jump to the 3d simulation**
+
+Since we are looking to simulate the cloud probability in $\Re^{3}$, we have to make some changes to our global solution, since it only works for one dimension $\Re$
+
+We are going to take advantage of the fact that multiply exponentials is easy, and since every dimension would be independent each from the other, we use
+
+$\psi(x,y,z,t)=\psi(x,t)\psi(y,t)\psi(z,t)$
+
+Making some other arrangaments, we end up with
+
+$\psi(x,y,z,t)=\frac{B^{3}\sigma^{3}}{\alpha^{\frac{3}{2}}}exp[\frac{\beta_{x}^{2}+\beta_{y}^{2}+\beta_{z}^{2}}{4\alpha}-3\sigma^{2}k_{0}^{2}]$
+
+where
+
+$\alpha=\sigma^{2}+\frac{i\hslash t}{2m}$
+
+$\beta_{j}=2\sigma^{2}k_{0j}-ij$
+
+$j=x,y,z$
+
+$B =(2\pi\sigma^{2})^{-1/4}$
+
+
+**Finnally, the probability of the particle given its position and time**
+
+We need
+$P(x,y,z,t)=|\psi(x,y,z,t)|^{2}$
+
+
+We are dealing with a complex probability function, is not just squaring the wave function
+we use
+
+$|\psi(x,y,z,t)|^{2}=\psi\psi^{*}$
+
+
+
+**Ending with**
+
+$P(x,y,z,t)  = \frac{1}{(2\pi \sigma^2(t))^{3/2}} \exp \left[ -\frac{(x - v_{gx}t)^2 + (y - v_{gy}t)^2 + (z - v_{gz}t)^2}{2\sigma^2(t)} \right]$
+
+Where
+$v_{gj}=\frac{\hslash k_{0j}}{m}$
+
+$j=x,y,z$
+
+$\sigma(t) = \sigma \sqrt{1 + \left( \frac{\hbar t}{2m\sigma^2} \right)^2}$
+
+this is our function to simulate or free electron travelling, now, we are left with determining our values of mass, standard deviation, and initial K. The config.py script, is open to change these values in order to have fun experimenting with the simulation
+
 
 https://jobgether.com/offer/69dda6e2c646310ee38d9908-ai-data-quality-analyst
 
