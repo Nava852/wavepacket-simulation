@@ -19,7 +19,7 @@ N = config.N
 L = config.L
 #We define the total space in each axis, given an interval, we randomize N numbers in between
 
-#@st.cache_data                       #<-------- This for streamlit use
+@st.cache_data                       #<-------- This for streamlit use
 def generate_points(N, L):
     x = np.random.uniform(-L, L, N)
     y = np.random.uniform(-L, L, N)
@@ -37,10 +37,10 @@ Tn = config.Tn
 s = config.s
 
 T = list(range(0,Tn))
-T = [t*s for t in T]                  #<-------- This for general plotly use
+#T = [t*s for t in T]                  #<-------- This for general plotly use
 
-#T = st.slider("t", 0, Tn, 0)*s        #<-------- This for streamlit use
-#st.title("Quantum Probability Cloud")
+T = st.slider("t", 0, Tn, 0)*s        #<-------- This for streamlit use
+st.title("Quantum Probability Cloud")
 
 
 
@@ -117,6 +117,6 @@ fig.update_layout(
     )]
 )
 
-fig.show()                                       #<-------- This for general plotly use
+#fig.show()                                       #<-------- This for general plotly use
 
-#st.plotly_chart(fig, use_container_width=True)   #<-------- This for streamlit use
+st.plotly_chart(fig, use_container_width=True)   #<-------- This for streamlit use
