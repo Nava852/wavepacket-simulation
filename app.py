@@ -40,7 +40,6 @@ s = config.s
 #T = [t*s for t in T]                  #<-------- This for general plotly use
 
 T = [t*s for t in range(0, Tn)]  #<-------- This for streamlit use
-t = st.slider("t", 0, Tn, 0) * s
 st.title("Quantum Probability Cloud")  
 
 #We pass the (x,y,z) points given Ti, to the wave function
