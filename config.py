@@ -1,6 +1,6 @@
 #Simulation Variables
 N = 10000
-L = 10
+L = 5
 
 Tn = 10
 s = 2
