@@ -38,14 +38,6 @@ Tn = config.Tn
 s = config.s
 T = [t*s for t in range(0, Tn)]  #<-------- This for streamlit use
 st.title("Quantum Probability Cloud")  
-
-#We pass the (x,y,z) points given Ti, to the wave function
-def psi_squared(x, y, z, t):
-    r2 = x**2 + y**2 + z**2
-
-    # onda libre tipo gaussian wave packet simplificado
-    return np.exp(-r2 / (2*(1 + 0.2*t))) * (1 + 0.3*np.cos(t + r2))
-
 # At the end, we will have Tn number of total frames
 
 frames = []
@@ -57,8 +49,6 @@ acording to the psi value
 '''
 for t in T:
   
-
-  #psi = psi_squared(x, y, z, t)
   psi = we.ProbPsi(x,y,z,t)
 
   frames.append(go.Frame(
