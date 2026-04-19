@@ -42,11 +42,12 @@ st.title("Quantum Probability Cloud")
 
 frames = []
 
-'''
-Now we do calculate now the psi value for each point, at each time, filling the
-frames array with them, we plot each point x,y,z normal, but the collor changes
-acording to the psi value
-'''
+
+#Now we do calculate now the psi value for each point, at each time, filling the
+#frames array with them, we plot each point x,y,z normal, but the collor changes
+#acording to the psi value
+
+
 for t in T:
   
   psi = we.ProbPsi(x,y,z,t)
@@ -75,10 +76,10 @@ for t in T:
   ))
 
 
-'''
-Now we have 'each' frame in the frames array, we are left with defining the
-initial frame to show, and creating the time slide
-'''
+
+#Now we have 'each' frame in the frames array, we are left with defining the
+#initial frame to show, and creating the time slide
+
 #First, the inital frame
 
 fig = go.Figure(
