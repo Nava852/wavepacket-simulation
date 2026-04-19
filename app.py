@@ -12,6 +12,7 @@ import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
 import config
+import waveec as we
 
 #We have N numbers of points for each R3 axis, so in total we have N points in R3
 
@@ -35,10 +36,6 @@ x, y, z = generate_points(N, L)
 
 Tn = config.Tn
 s = config.s
-
-#T = list(range(0,Tn))
-#T = [t*s for t in T]                  #<-------- This for general plotly use
-
 T = [t*s for t in range(0, Tn)]  #<-------- This for streamlit use
 st.title("Quantum Probability Cloud")  
 
@@ -59,7 +56,10 @@ frames array with them, we plot each point x,y,z normal, but the collor changes
 acording to the psi value
 '''
 for t in T:
-  psi = psi_squared(x, y, z, t)
+  
+
+  #psi = psi_squared(x, y, z, t)
+  psi = we.ProbPsi(x,y,z,t)
 
   frames.append(go.Frame(
       data=[go.Scatter3d(
